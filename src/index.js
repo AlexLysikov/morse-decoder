@@ -39,7 +39,12 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    
+    let  element = '';
+    while (expr !== '') {
+        element += MORSE_TABLE[expr.slice(0, 10)];
+        expr = expr.slice(10);
+    }
+    return element;
 }
 
 module.exports = {
